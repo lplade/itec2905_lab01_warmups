@@ -18,19 +18,33 @@ input_sentence = input("> ")
 
 new_word = False
 output_sentence = ""
+first_is_letter = False
 
-#loop over that string
+# loop over that string
 for char in input_sentence:
     if char == ' ':
         new_word = True
         # just flip flag, ignore for output purposes
+    elif not (char.isalpha() or char.isalnum()):
+        print("Omitting invalid character \'" + char + "\'")
     else:
-        if new_word is True:
-            output_sentence += char.upper()
+        #case for every character after the first
+        if first_is_letter:
+            if new_word is True:
+                output_sentence += char.upper()
+            else:
+                output_sentence += char.lower()
+                
+        #special case that occurs until the first letter in the string
         else:
-            output_sentence += char.lower()
+            if char.isalpha():
+                first_is_letter = True
+                output_sentence += char.lower()
+            else:
+                print("Omitting invalid leading character \'" + char + "\'")
+
         new_word = False
-    #TODO test for legit characters
+
 
 print("Here is your string in camelCase:")
 print(output_sentence)
