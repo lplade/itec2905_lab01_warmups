@@ -1,7 +1,13 @@
 #!/bin/python
+
+# To refresh your memory of Python, write a 'guess the number' game. The
+# computer should 'think' of a random number within a certain range, and
+# challenge the user to guess the number. Provide feedback and hints for the
+# user; such as "too high" or "too low".
+
 import random
 
-#initialize the pseudorandom generator
+# initialize the pseudorandom generator
 random.seed()
 
 LOW_END = 0
@@ -9,9 +15,10 @@ HIGH_END = 9
 
 random_number = random.randint(LOW_END, HIGH_END)
 
-print("I am thinking of an integer from " + str(LOW_END) + " to " + str(HIGH_END) +".")
+print("I am thinking of an integer from " + str(LOW_END) + " to " + str(
+    HIGH_END) + ".")
 
-#sentinel
+# sentinel
 still_guessing = True
 guessed_number = -1
 
@@ -34,9 +41,3 @@ while still_guessing is True:
 
 assert guessed_number == random_number
 print("You got it! I picked " + str(random_number) + ".")
-
-
-
-
-
-
