@@ -13,4 +13,24 @@
 #
 # Test your program, and comment your code.
 
-input("")
+print("Enter a sentence and I will camelCase it.")
+input_sentence = input("> ")
+
+new_word = False
+output_sentence = ""
+
+#loop over that string
+for char in input_sentence:
+    if char == ' ':
+        new_word = True
+        # just flip flag, ignore for output purposes
+    else:
+        if new_word is True:
+            output_sentence += char.upper()
+        else:
+            output_sentence += char.lower()
+        new_word = False
+    #TODO test for legit characters
+
+print("Here is your string in camelCase:")
+print(output_sentence)
