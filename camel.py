@@ -34,7 +34,7 @@ for char in input_sentence:
                 output_sentence += char.upper()
             else:
                 output_sentence += char.lower()
-                
+
         #special case that occurs until the first letter in the string
         else:
             if char.isalpha():
